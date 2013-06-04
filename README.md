@@ -1,4 +1,4 @@
 helloworld
 ==========
 
-Hello earthlings
+Hello earthlings!  This project will be amazing.
