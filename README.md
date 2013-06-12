@@ -13,7 +13,7 @@ JUNE 11, 2013:
 
 	->make header and footer files ***
 
-	->get htaccess file to work ???
+	->get htaccess file to work ***
 
 To Do:
 

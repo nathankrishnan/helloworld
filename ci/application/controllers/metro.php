@@ -28,6 +28,9 @@ class Metro extends CI_Controller {
 		return $jsonObject;
 	}
 
+	public function test(){
+		echo "test";
+	}
 
 }
 
