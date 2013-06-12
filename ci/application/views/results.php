@@ -3,9 +3,9 @@
 
 <?php
 
-	$jsonObj = Metro::getJson();
+	$jsonLines = Metro::getJson("http://api.wmata.com/Rail.svc/json/JLines?api_key=", "2d3sva9w5mmhrc9wdaq3m2z3");
 
-	foreach($jsonObj->Lines as $line) {
+	foreach($jsonLines->Lines as $line) {
 		echo "<p>";
 		echo "<b>Display Name: </b>".$line->DisplayName."<br/>";
 		echo "<b>End Station Code: </b>".$line->EndStationCode."<br/>";
@@ -15,5 +15,8 @@
 		echo "<b>Start Station Code: </b>".$line->StartStationCode."<br/>";
 		echo "</p>";
 	}
+
+
+
 ?>
 

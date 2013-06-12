@@ -15,12 +15,19 @@ JUNE 11, 2013:
 
 	->get htaccess file to work ***
 
+
+
+JUNE 12, 2013:
+===========================
+
+	->put re-useable functions into libraries folder ***
+
+	->load appropriate data into dropdowns using json request ***
+
 To Do:
 
 	->setup jquery mobile
-
-	->figure out how to get routes between stations
-
-	->setup form input
-
-===========================
+	
+	->make repository private
+	
+	->algorithm to switch between lines
