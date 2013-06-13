@@ -15,8 +15,11 @@ class Site extends CI_Controller {
 	}
 
 	public function results(){
+
+		$form_data = $this->input->post();
+
 		$this->load->view('header');
-		$this->load->view('results');
+		$this->load->view('results', $form_data);
 		$this->load->view('footer');
 	}
 

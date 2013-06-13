@@ -5,11 +5,11 @@
 	$this->load->helper('form');
 
 	//opens form tag and specifies action
-	echo form_open('metro/');
+	echo form_open('site/results');
 ?>
 
 	<label for="from">From: </label>
-	<select>
+	<select name="from">
 		<!--generate dropdown options from an api request-->
 		<?php
 			$jsonStations = Metro::getJson("http://api.wmata.com/Rail.svc/json/JStations?api_key=", "2d3sva9w5mmhrc9wdaq3m2z3");
@@ -26,7 +26,7 @@
 	<br/><br/>
 
 	<label for="to">To: </label>
-	<select>
+	<select name="to">
 		<!--generate dropdown options from an api request-->
 		<?php
 			$jsonStations = Metro::getJson("http://api.wmata.com/Rail.svc/json/JStations?api_key=", "2d3sva9w5mmhrc9wdaq3m2z3");
