@@ -16,7 +16,15 @@
 
 			foreach($jsonStations->Stations as $station) {
 				
-				echo "<option value='".$station->Code."'>";
+				echo "<option value='".$station->Code."|".$station->LineCode1;
+
+				if($station->LineCode2 != null){
+					echo "|".$station->LineCode2."'>";
+				}
+				else{
+					echo "'>";
+				}
+				
 				echo $station->Name." [".$station->Code."]";
 				echo "</option>";
 			}
@@ -33,7 +41,15 @@
 
 			foreach($jsonStations->Stations as $station) {
 				
-				echo "<option value='".$station->Code."'>";
+				echo "<option value='".$station->Code."|".$station->LineCode1;
+
+				if($station->LineCode2 != null){
+					echo "|".$station->LineCode2."'>";
+				}
+				else{
+					echo "'>";
+				}
+
 				echo $station->Name." [".$station->Code."]";
 				echo "</option>";
 			}
