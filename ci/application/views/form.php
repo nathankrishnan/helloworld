@@ -6,6 +6,24 @@
 
 	//opens form tag and specifies action
 	echo form_open('site/results');
+
+	function printOptions($jsonStations){
+		foreach($jsonStations->Stations as $station) {
+			
+			echo "<option value='".$station->Code."|".$station->LineCode1;
+
+			if($station->LineCode2 != null){
+				echo "|".$station->LineCode2."'>";
+			}
+			else{
+				echo "'>";
+			}
+			
+			echo $station->Name." [".$station->Code."]";
+			echo "</option>";
+		}
+	}
+
 ?>
 
 	<label for="from">From: </label>
@@ -13,21 +31,8 @@
 		<!--generate dropdown options from an api request-->
 		<?php
 			$jsonStations = Metro::getJson("http://api.wmata.com/Rail.svc/json/JStations?api_key=", "2d3sva9w5mmhrc9wdaq3m2z3");
-
-			foreach($jsonStations->Stations as $station) {
-				
-				echo "<option value='".$station->Code."|".$station->LineCode1;
-
-				if($station->LineCode2 != null){
-					echo "|".$station->LineCode2."'>";
-				}
-				else{
-					echo "'>";
-				}
-				
-				echo $station->Name." [".$station->Code."]";
-				echo "</option>";
-			}
+			printOptions($jsonStations);
+	
 		?>
 	</select>
 
@@ -36,23 +41,8 @@
 	<label for="to">To: </label>
 	<select name="to">
 		<!--generate dropdown options from an api request-->
-		<?php
-			$jsonStations = Metro::getJson("http://api.wmata.com/Rail.svc/json/JStations?api_key=", "2d3sva9w5mmhrc9wdaq3m2z3");
-
-			foreach($jsonStations->Stations as $station) {
-				
-				echo "<option value='".$station->Code."|".$station->LineCode1;
-
-				if($station->LineCode2 != null){
-					echo "|".$station->LineCode2."'>";
-				}
-				else{
-					echo "'>";
-				}
-
-				echo $station->Name." [".$station->Code."]";
-				echo "</option>";
-			}
+		<?php 
+			printOptions($jsonStations); 
 		?>
 	</select>
 
